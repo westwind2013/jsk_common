@@ -10,6 +10,8 @@ if(CCACHE_FOUND)
 endif(CCACHE_FOUND)
 
 find_package(catkin REQUIRED COMPONENTS
+  # hli035: diagnostic_updater not found
+  diagnostic_updater
   dynamic_reconfigure
   eigen_conversions
   geometry_msgs
