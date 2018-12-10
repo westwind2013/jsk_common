@@ -76,7 +76,26 @@ install(DIRECTORY src dot-files cmake launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
   USE_SOURCE_PERMISSIONS
   )
-install(DIRECTORY bin/
+
+catkin_install_python(PROGRAMS
+  bin/bag_plotter.py
+  bin/battery_capacity_summary.py
+  bin/check_host_sanity.py
+  bin/force_to_rename_changelog_user.py
+  bin/git-jsk-commit
+  bin/kill_after_seconds.py
+  bin/launchdoc-generator.py
+  bin/report_issue.sh
+  bin/ros_console.py
+  bin/roscore_check.py
+  bin/roscore_monitor.py
+  bin/roscore_regardless.py
+  bin/rostool-alias-generator.py
+  bin/run_tmux
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-  USE_SOURCE_PERMISSIONS
-  )
+)
+
+#install(DIRECTORY bin/
+#  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+#  USE_SOURCE_PERMISSIONS
+#  )

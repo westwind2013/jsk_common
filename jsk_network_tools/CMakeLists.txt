@@ -63,10 +63,25 @@ add_dependencies(silverhammer_highspeed_internal_receiver
 # recursively into ${CATKIN_PACKAGE_SHARE_DESTINATION}.
 # Be careful that 'launch' and 'launch/' are different: the former is directory
 # and the latter is each content.
-install(DIRECTORY scripts/
+
+catkin_install_python(PROGRAMS
+  scripts/expand_udp_receive_buffer.sh
+  scripts/heartbeat_master.py
+  scripts/heartbeat_responser.py
+  scripts/network_plot.py
+  scripts/network_status.py
+  scripts/silverhammer.lua
+  scripts/silverhammer_highspeed_receiver.py
+  scripts/silverhammer_highspeed_receiver_with_internal_buffer.py
+  scripts/silverhammer_highspeed_streamer.py
+  scripts/silverhammer_lowspeed_check_size.py
+  scripts/silverhammer_lowspeed_receiver.py
+  scripts/silverhammer_lowspeed_streamer.py
+  scripts/wifi_status.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-  USE_SOURCE_PERMISSIONS
 )
+
+
 install(DIRECTORY launch test
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
   USE_SOURCE_PERMISSIONS

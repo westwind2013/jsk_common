@@ -24,6 +24,7 @@ catkin_package(
 # recursively into ${CATKIN_PACKAGE_SHARE_DESTINATION}.
 # Be careful that 'launch' and 'launch/' are different: the former is directory
 # and the latter is each content.
+
 catkin_install_python(PROGRAMS
   scripts/jsk_data
   scripts/robot_description_loader.py
@@ -31,10 +32,13 @@ catkin_install_python(PROGRAMS
   scripts/rosbag_always.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
-install(DIRECTORY node_scripts/
+
+catkin_install_python(PROGRAMS
+  node_scripts/camera_coords_change_trigger.py
+  node_scripts/data_collection_server.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-  USE_SOURCE_PERMISSIONS
 )
+
 install(PROGRAMS
   scripts/copy-pr2-bagfiles
   scripts/decompress

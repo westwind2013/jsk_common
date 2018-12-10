@@ -192,9 +192,20 @@ install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 )
 
-install(DIRECTORY scripts/
+catkin_install_python(PROGRAMS
+  scripts/bag2csv.py
+  scripts/is_synchronized
+  scripts/joint_state_pruner.py
+  scripts/pose_stamped_publisher.py
+  scripts/rosping_existence.py
+  scripts/sample_topic_update_caller.sh
+  scripts/static_image_publisher.py
+  scripts/synchronize_republish.py
+  scripts/tf_to_pose.py
+  scripts/tf_to_transform.py
+  scripts/topic_compare.py
+  scripts/topic_statistics.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-  USE_SOURCE_PERMISSIONS
 )
 
 install(FILES ${jsk_topic_tools_test_files}
